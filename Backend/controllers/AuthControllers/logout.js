@@ -1,0 +1,17 @@
+const logoutUser = async (req, res) => {
+  try {
+    res.clearCookie("token");
+    return res.status(200).json({
+      message: "Logout Successful",
+      success: true,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(501).json({
+      message: "Logout Failed",
+      success: false,
+    });
+  }
+};
+
+module.exports = { logoutUser };

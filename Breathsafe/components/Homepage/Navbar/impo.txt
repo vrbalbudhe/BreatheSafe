@@ -1,0 +1,127 @@
+import React from "react";
+import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+
+interface Note {
+  date: string;
+  time: string;
+  content: string;
+  image?: string;
+}
+
+const notes: Note[] = [
+  {
+    date: "May 24",
+    time: "5:43 pm",
+    content: "Excellent harvest, the grapes have a rich flavor and aroma",
+    image: "https://example.com/grapes.jpg", // Replace with your image path
+  },
+  {
+    date: "May 22",
+    time: "3:17 pm",
+    content:
+      "I'll be back here in a couple of days to check if the grapes are fully ripe or not.",
+  },
+];
+
+export default function NavbarCard() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>Notes</Text>
+        <TouchableOpacity>
+          <Text style={styles.chevron}>›</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.notesList}>
+        {notes.map((note, index) => (
+          <View key={index} style={styles.noteItem}>
+            {note.image && (
+              <Image source={{ uri: note.image }} style={styles.noteImage} />
+            )}
+            <View style={styles.noteContent}>
+              <Text style={styles.noteTimestamp}>
+                {note.date} - {note.time}
+              </Text>
+              <Text style={styles.noteText}>{note.content}</Text>
+            </View>
+          </View>
+        ))}
+      </View>
+
+      <TouchableOpacity style={styles.addButton}>
+        <Text style={styles.addButtonText}>Add New Note</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#f7f7ff",
+    borderRadius: 18,
+    padding: 16,
+    width: "100%",
+    maxWidth: 400,
+    shadowColor: "#ffffff",
+    shadowOffset: {
+      width: 1,
+      height: 1,
+    },
+    shadowOpacity: 0.9,
+    shadowRadius: 8,
+    // elevation: 5,
+  },
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 16,
+  },
+  headerText: {
+    fontSize: 25,
+    fontWeight: "800",
+    color: "#020202",
+  },
+  chevron: {
+    fontSize: 24,
+    color: "#000",
+  },
+  notesList: {
+    gap: 16,
+  },
+  noteItem: {
+    flexDirection: "row",
+    gap: 12,
+  },
+  noteImage: {
+    width: 50,
+    height: 50,
+    borderRadius: 8,
+  },
+  noteContent: {
+    flex: 1,
+  },
+  noteTimestamp: {
+    fontSize: 14,
+    color: "#000",
+    marginBottom: 4,
+  },
+  noteText: {
+    fontSize: 14,
+    color: "#666",
+    lineHeight: 20,
+  },
+  addButton: {
+    backgroundColor: "#000",
+    borderRadius: 25,
+    padding: 14,
+    alignItems: "center",
+    marginTop: 16,
+  },
+  addButtonText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "500",
+  },
+});
