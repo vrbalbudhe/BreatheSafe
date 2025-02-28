@@ -11,7 +11,10 @@ import { router } from "expo-router";
 export default function HomeScreen() {
   return (
     <LinearGradient colors={["#F5F5F7", "#F5F5F7"]} style={styles.container}>
-      <ScrollView style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ display: "flex", flexDirection: "column", gap: 10 }}
+      >
         <NavbarCard />
         <AqiStatus />
         <UpcomingScheduleStatus />
@@ -29,7 +32,7 @@ const styles = StyleSheet.create({
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    paddingTop: 50,
+    paddingTop: 40,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 20,

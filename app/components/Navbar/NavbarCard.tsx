@@ -88,15 +88,15 @@ export default function NavbarCard({
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: "white",
+    backgroundColor: "white",
     padding: 14,
     paddingLeft: 15,
     paddingRight: 15,
     marginBottom: 5,
     width: "100%",
     borderRadius: 20,
-    // borderWidth: 2,
-    // borderColor: "#edf2f4",
+    borderWidth: 2,
+    borderColor: "#edf2f4",
   },
   navContent: {
     flexDirection: "row",
