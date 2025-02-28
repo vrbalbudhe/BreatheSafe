@@ -99,9 +99,22 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="settings"
+        name="profilepage"
         options={{
           title: "Profile",
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name={focused ? "person" : "person-outline"}
+              size={24}
+              color={focused ? "white" : "#8E8E93"}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="learnpage"
+        options={{
+          title: "Learn",
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={focused ? "person" : "person-outline"}

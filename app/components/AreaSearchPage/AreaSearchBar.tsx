@@ -128,12 +128,12 @@ const styles = StyleSheet.create({
   searchBar: {
     flexDirection: "row",
     alignItems: "center",
-    borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 8,
+    borderRadius: 25,
     paddingHorizontal: 10,
     paddingVertical: 8,
     backgroundColor: "#fff",
+    borderWidth: 2,
+    borderColor: "#edf2f4",
   },
   icon: {
     marginRight: 8,

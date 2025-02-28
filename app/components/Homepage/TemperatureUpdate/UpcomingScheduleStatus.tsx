@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   container: {
     maxWidth: 400,
     marginBottom: 5,
-    borderRadius: 20,
+    borderRadius: 30,
     backgroundColor: "white",
     width: "100%",
     borderWidth: 2,

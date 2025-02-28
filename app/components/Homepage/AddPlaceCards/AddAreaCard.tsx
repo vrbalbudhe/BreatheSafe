@@ -71,8 +71,8 @@ const { width } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 20,
-    padding: 16,
+    borderRadius: 30,
+    padding: 18,
     overflow: "hidden",
     position: "relative",
     marginBottom: 5,

@@ -68,7 +68,9 @@ export default function AppShowcase() {
         {/* App Header */}
         <View style={styles.header}>
           <View>
-            <Text style={styles.headerText}>BreathSafe</Text>
+            <Text style={[styles.headerText, { color: "#44a1a0" }]}>
+              BreathSafe
+            </Text>
             <Text style={styles.subHeaderText}>
               Track your location's AQI & BreathSafe
             </Text>
@@ -116,10 +118,10 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 20,
     width: "100%",
-    borderRadius: 22,
+    borderRadius: 20,
     borderWidth: 2,
-    elevation: 3,
     borderColor: "#edf2f4",
+    elevation: 3,
   },
   header: {
     flexDirection: "row",

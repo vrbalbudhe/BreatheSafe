@@ -16,7 +16,7 @@ const style = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     gap: 8,
-    paddingTop: 50,
+    paddingTop: 30,
     paddingLeft: 2,
     paddingRight: 2,
     backgroundColor: "#F5F5F7",

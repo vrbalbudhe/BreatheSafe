@@ -4,7 +4,7 @@ import AQICard from "./AqiCard";
 export default function AqiStatus() {
   return (
     <View style={styles.container}>
-      <AQICard location="Alandi" aqi={10} />
+      <AQICard location="Alandi" aqi={230} />
     </View>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 
-export default function Settings() {
+export default function LearnPage() {
   return (
     <View></View>
   )
