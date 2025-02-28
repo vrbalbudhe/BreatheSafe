@@ -8,9 +8,7 @@ export default function map() {
   return (
     <View style={style.container}>
       <ScrollView>
-        <View style={{ paddingLeft: 10, paddingRight: 10 }}></View>
-        {/* <MapScreen /> */}
-        <MapCard />
+        {/* <MapCard /> */}
       </ScrollView>
     </View>
   );
@@ -22,7 +20,8 @@ const style = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     gap: 8,
-    paddingTop: 50,
+    paddingTop: 40,
+    // paddingBottom: 50,
     backgroundColor: "#F5F5F7",
   },
 });

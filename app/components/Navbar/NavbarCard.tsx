@@ -31,7 +31,10 @@ export default function NavbarCard({
         <View style={[styles.greetingContainer]}>
           <View style={styles.PinHeadingContainer}>
             <Ionicons name="leaf" size={24} color="#44a1a0" />
-            <Text style={styles.userName}>BreathSafe</Text>
+            <Text style={styles.userName}>
+              Breath
+              <Text style={{ color: "#44a1a0" }}>Safe</Text>
+            </Text>
           </View>
 
           <View style={styles.PinHeadingContainer}>
@@ -61,7 +64,7 @@ export default function NavbarCard({
             </TouchableOpacity>
           ) : (
             <Pressable onPress={() => router.push("/loginpage")}>
-              <View
+              {/* <View
                 style={{
                   backgroundColor: "#44a1a0",
                   paddingHorizontal: 18,
@@ -74,7 +77,7 @@ export default function NavbarCard({
                 >
                   Login
                 </Text>
-              </View>
+              </View> */}
             </Pressable>
           )}
         </View>
@@ -85,15 +88,15 @@ export default function NavbarCard({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "white",
+    // backgroundColor: "white",
     padding: 14,
     paddingLeft: 15,
     paddingRight: 15,
     marginBottom: 5,
     width: "100%",
     borderRadius: 20,
-    borderWidth: 2,
-    borderColor: "#edf2f4",
+    // borderWidth: 2,
+    // borderColor: "#edf2f4",
   },
   navContent: {
     flexDirection: "row",
@@ -104,7 +107,7 @@ const styles = StyleSheet.create({
     gap: 4,
   },
   greetingText: {
-    fontSize: 18,
+    fontSize: 20,
     color: "#666",
     flexWrap: "wrap",
     fontWeight: "500",
@@ -116,7 +119,7 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   userName: {
-    fontSize: 22,
+    fontSize: 25,
     fontWeight: "800",
     color: "#353535",
   },

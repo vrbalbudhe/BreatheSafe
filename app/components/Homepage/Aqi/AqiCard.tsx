@@ -120,7 +120,7 @@ const styles = StyleSheet.create<Styles>({
   container: {
     maxWidth: 400,
     padding: 20,
-    borderRadius: 20,
+    borderRadius: 15,
     borderWidth: 2,
     borderColor: "#edf2f4",
   },

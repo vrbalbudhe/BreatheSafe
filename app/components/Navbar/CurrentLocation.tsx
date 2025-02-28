@@ -24,7 +24,7 @@ export default function CurrentLocation() {
         <Animated.View
           style={{ transform: [{ rotate: rotationInterpolation }] }}
         >
-          <Ionicons name="compass" size={45} color="#253237" />
+          <Ionicons name="compass" size={50} color="#264653" />
         </Animated.View>
       </TouchableOpacity>
     </View>
