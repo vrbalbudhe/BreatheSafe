@@ -101,7 +101,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="profilepage"
         options={{
-          title: "Profile",
+          title: "Settings",
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={focused ? "person" : "person-outline"}

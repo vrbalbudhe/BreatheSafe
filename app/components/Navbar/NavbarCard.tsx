@@ -39,7 +39,9 @@ export default function NavbarCard({
 
           <View style={styles.PinHeadingContainer}>
             <Ionicons name="navigate" size={18} color="#8d99ae" />
-            <Text style={[styles.greetingText, { fontSize: 14 }]}>{place}</Text>
+            <Text style={[styles.greetingText, { fontSize: 14 }]}>
+              {place || "Loading..."}
+            </Text>
           </View>
         </View>
 
@@ -53,7 +55,7 @@ export default function NavbarCard({
               {avatarUrl ? (
                 <Image source={{ uri: avatarUrl }} style={styles.avatar} />
               ) : (
-                <Pressable onPress={() => router.replace("/")}>
+                <Pressable onPress={() => router.replace("/profile")}>
                   <View style={styles.avatarPlaceholder}>
                     <Text style={styles.avatarText}>
                       {user?.firstName?.charAt(0).toUpperCase()}
@@ -119,7 +121,7 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   userName: {
-    fontSize: 25,
+    fontSize: 23,
     fontWeight: "800",
     color: "#353535",
   },

@@ -128,7 +128,7 @@ const styles = StyleSheet.create<Styles>({
     marginBottom: 20,
   },
   title: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: "800",
     color: "white",
     marginBottom: 8,

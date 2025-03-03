@@ -1,11 +1,15 @@
 import AppShowcase from "@/components/Homepage/Information/AppShowcase";
+import SettingsCard from "@/components/Settings/SettingsCard";
+import { useAuth } from "@/contexts/AuthContext";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import React from "react";
-import { Pressable, StyleSheet, Text } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text } from "react-native";
 import { View } from "react-native";
 
 export default function profilepage() {
+  const { user, setUser, loading, refreshUser } = useAuth();
+  console.log("checkk : ", user);
   return (
     <View style={styles.container}>
       <View
@@ -19,28 +23,58 @@ export default function profilepage() {
           marginRight: 5,
         }}
       >
-        <View style={{ display: "flex", flexDirection: "row", gap: "5" }}>
-          <Ionicons name="person" color="#44a1a0" size={28} />
-          <Text style={styles.headerTitle}>Profile</Text>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "6",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Ionicons name="person" color="#44a1a0" size={20} />
+          <Text style={styles.headerTitle}>Settings</Text>
         </View>
-        <View>
-          <Pressable onPress={() => router.push("/loginpage")}>
+        {!user ? (
+          <View>
+            <Pressable onPress={() => router.push("/loginpage")}>
+              <View
+                style={{
+                  backgroundColor: "#44a1a0",
+                  paddingHorizontal: 20,
+                  paddingVertical: 8,
+                  borderRadius: 5,
+                }}
+              >
+                <Text
+                  style={{ fontSize: 15, fontWeight: "700", color: "white" }}
+                >
+                  Login
+                </Text>
+              </View>
+            </Pressable>
+          </View>
+        ) : (
+          <Pressable onPress={() => router.replace("/profile")}>
             <View
               style={{
-                backgroundColor: "#44a1a0",
-                paddingHorizontal: 18,
-                paddingVertical: 8,
-                borderRadius: 10,
+                borderRadius: 30,
+                paddingHorizontal: 16,
+                paddingVertical: 10,
+                backgroundColor: "#14213d",
               }}
             >
-              <Text style={{ fontSize: 17, fontWeight: "800", color: "white" }}>
-                Login
+              <Text style={{ fontSize: 20, color: "white" }}>
+                {user?.firstName?.charAt(0).toUpperCase()}
               </Text>
             </View>
           </Pressable>
-        </View>
+        )}
       </View>
-      <AppShowcase />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <SettingsCard />
+        <AppShowcase />
+      </ScrollView>
     </View>
   );
 }
@@ -49,15 +83,20 @@ const styles = StyleSheet.create({
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    paddingTop: 50,
+    paddingTop: 40,
     backgroundColor: "#F5F5F7",
     paddingLeft: 15,
     paddingRight: 15,
     paddingBottom: 20,
   },
   headerTitle: {
-    fontSize: 28,
+    fontSize: 25,
     fontWeight: "800",
     // color: "#44a1a0",
+  },
+  avatarPlaceholder: {
+    backgroundColor: "#2b2d42",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

@@ -34,10 +34,6 @@ export const LocationProvider: React.FC<{ children: React.ReactNode }> = ({
   const rotation = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    getLocation();
-  });
-
-  useEffect(() => {
     const interval = setInterval(() => {
       getLocation();
     }, 120000);

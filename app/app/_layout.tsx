@@ -50,6 +50,8 @@ export default function RootLayout() {
               name="registerpage"
               options={{ headerShown: false }}
             />
+            <Stack.Screen name="profile" options={{ headerShown: false }} />
+            <Stack.Screen name="learn" options={{ headerShown: false }} />
             <Stack.Screen name="+not-found" options={{ headerShown: false }} />
           </Stack>
           <StatusBar style="auto" />

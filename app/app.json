@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "app",
+    "name": "Breath App",
     "slug": "app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,6 +10,9 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
+    },
+    "extra": {
+      "API_URL": "http://192.168.0.105:8000"
     },
     "android": {
       "adaptiveIcon": {

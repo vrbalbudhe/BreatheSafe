@@ -6,13 +6,7 @@ export default function MapShowcaseCard() {
     <View style={styles.container}>
       <View style={styles.contentWrapper}>
         <View style={styles.iconContainer}>
-          <Ionicons name="map" size={18} color="#fff" />
-          <Ionicons
-            name="location"
-            size={16}
-            color="#fff"
-            style={styles.locationIcon}
-          />
+          <Ionicons name="map" size={25} color="#fff" />
         </View>
         <View style={styles.textContainer}>
           <Text style={styles.title}>Track Location</Text>
@@ -46,14 +40,14 @@ const styles = StyleSheet.create({
   contentWrapper: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 20,
+    gap: 25,
   },
   iconContainer: {
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#44a1a0",
-    padding: 6,
-    borderRadius: 12,
+    padding: 10,
+    borderRadius: 25,
   },
   locationIcon: {
     marginLeft: 4,
@@ -63,7 +57,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "#44a1a0",
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: "800",
   },
   subtitle: {

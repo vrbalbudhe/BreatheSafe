@@ -2,6 +2,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Ionicons } from "@expo/vector-icons";
 import axios from "axios";
 import { router, useRouter } from "expo-router";
+import Constants from "expo-constants";
 import React, { useState } from "react";
 import {
   View,
@@ -21,6 +22,8 @@ interface LoginFormData {
   password: string;
 }
 
+const API_URL =
+  Constants.expoConfig?.extra?.API_URL || "https://fallback-url.com";
 const { width } = Dimensions.get("screen");
 export default function LoginPage() {
   const router = useRouter();
@@ -44,7 +47,7 @@ export default function LoginPage() {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "http://192.168.0.103:8000/api/Auth/login", // Change to correct login route
+        `${API_URL}/api/Auth/login`, // Change to correct login route
         formData,
         { withCredentials: true }
       );

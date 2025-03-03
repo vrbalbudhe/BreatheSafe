@@ -117,8 +117,16 @@ export default function NewsShowcase(): React.ReactElement {
       <StatusBar barStyle="dark-content" backgroundColor="#f8f9fa" />
 
       <View style={styles.header}>
-        <View style={{ display: "flex", flexDirection:"row", gap:"5" }}>
-          <Ionicons name="copy" color="#44a1a0" size={28} />
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "8",
+            justifyContent: "flex-start",
+            alignItems: "center",
+          }}
+        >
+          <Ionicons name="copy" color="#44a1a0" size={20} />
           <Text style={styles.headerTitle}>News</Text>
         </View>
         <Text style={styles.headerSubtitle}>
@@ -164,7 +172,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5F5F7",
   },
   headerTitle: {
-    fontSize: 28,
+    fontSize: 26,
     fontWeight: "800",
     // color: "#44a1a0",
   },
@@ -178,7 +186,7 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: "#fff",
-    borderRadius: 25,
+    borderRadius: 15,
     overflow: "hidden",
     marginBottom: 5,
     borderWidth: 2,

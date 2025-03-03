@@ -8,7 +8,9 @@ import {
 import { router } from "expo-router";
 import axios from "axios";
 import { Dimensions, Text, View } from "react-native";
-
+import Constants from "expo-constants";
+const API_URL =
+  Constants.expoConfig?.extra?.API_URL || "https://fallback-url.com";
 // Define User Type (Modify based on actual user data structure)
 interface UserType {
   id: string;
@@ -81,17 +83,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     console.log("checking user session ");
     setLoading(true);
     try {
-      const res = await axios.get(
-        "http://192.168.0.103:8000/api/Auth/checkLog",
-        {
-          withCredentials: true,
-        }
-      );
+      const res = await axios.get(`${API_URL}/api/Auth/checkLog`, {
+        withCredentials: true,
+      });
       console.log("Checking Log Status : ", res.data);
       if (res?.data?.payload?.email) {
         const email = res?.data?.payload?.email;
         const res1 = await axios.post(
-          "http://192.168.0.103:8000/api/User/specific",
+          `${API_URL}/api/User/specific`,
           {
             email,
           },

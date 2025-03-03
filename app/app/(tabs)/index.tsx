@@ -7,6 +7,7 @@ import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import AddAreaCard from "@/components/Homepage/AddPlaceCards/AddAreaCard";
 import { router } from "expo-router";
+import AQIActivityGuide from "@/components/Homepage/Information/AQIRecommendationsCard";
 
 export default function HomeScreen() {
   return (
@@ -22,6 +23,7 @@ export default function HomeScreen() {
           <MapShowcaseCard />
         </Pressable>
         <AddAreaCard />
+        <AQIActivityGuide />
       </ScrollView>
     </LinearGradient>
   );
